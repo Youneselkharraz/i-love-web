@@ -1,11 +1,28 @@
-# i-love-web
+Visitekaartje  
 
-Learning Journal en Digital Gardening
+Een persoonlijke visitekaartjespagina, gemaakt voor de opleiding Ad Frontend Design & Development (FDND). De pagina stelt mij voor en laat zien welke interesses ik heb.
 
-<!-- De instructie voor deze leertaak vind je in: [INSTRUCTIONS](https://github.com/fdnd-task/i-love-web/blob/main/docs/INSTRUCTIONS.md) -->
-De instructie voor deze leertaak vind je in de: [WIKI](https://github.com/fdnd-task/i-love-web/wiki)
+Wat erop staat
 
+- Mijn naam en opleiding
+- Een foto en een korte introductie
+- Drie interesses met foto en tekst: motor, vakantie en voetbal
+- Een afsluitende tekst
 
-## Licentie
+Bestanden
 
-This project is licensed under the terms of the [MIT license](./LICENSE).
+| Bestand | Beschrijving |
+| --- | --- |
+| `index.html` | De pagina, met semantische HTML (`header`, `main`, `figure`, `section`, `article`, `footer`) |
+| `style.css` | De opmaak |
+| `Younes.jpg`, `IMG_6656.JPG`, `vakantie.jpg`, `voetbal.jpg` | De afbeeldingen |
+
+ 
+
+- **Semantische HTML**, gecontroleerd met de W3C HTML-validator
+- **CSS Grid** met `repeat(auto-fit, minmax())`, waardoor de indeling zonder media queries meebeweegt met het scherm
+- **Custom properties** voor kleuren en afstanden
+- **Logical properties** (`inline-size`, `margin-inline`)
+- **`aspect-ratio`** en `object-fit` voor de afbeeldingen
+
+Bij de belangrijkste regels in `style.css` staat een link naar de bijbehorende MDN-pagina.

@@ -1,259 +1,97 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Variabelen: https://developer.mozilla.org/en-US/docs/Web/CSS/--* */
+:root {
+    --bg: #0f172a;
+    --kaart: #172033;
+    --interesse: #1e293b;
+    --lijn: #475569;
+    --tekst: white;
+    --radius: 1rem;
+    --gap: 1.5rem;
 }
 
+/* box-sizing: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 body {
-    min-height: 100vh;
-    padding: 40px 20px;
-
-    display: flex;
-    justify-content: center;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(0, 174, 255, 0.20),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 85% 80%,
-            rgba(90, 50, 255, 0.20),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #020617,
-            #0f172a
-        );
-}
-
-.kaart {
-    width: 90%;
-    max-width: 1000px;
-
-    padding: 50px;
-
-    color: white;
-
-    background:
-        linear-gradient(
-            145deg,
-            #172033,
-            #0b1220
-        );
-
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 25px;
-
-    box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.5);
-}
-
-h1 {
     margin: 0;
-
-    text-align: center;
-
-    font-size: 40px;
-    letter-spacing: 2px;
-
-    color: white;
+    padding: 1.25rem;
+    min-block-size: 100vh;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--tekst);
+    background-color: var(--bg);
 }
 
-.functie {
-    margin: 10px 0 0;
-
+/* max-inline-size + margin-inline: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values */
+.kaart {
+    max-inline-size: 62rem;
+    margin-inline: auto;
+    padding: 2rem;
     text-align: center;
-
-    font-size: 18px;
-
-    color: white;
+    background-color: var(--kaart);
+    border-radius: var(--radius);
 }
 
 .lijn {
-    width: 80px;
-    height: 3px;
-
-    margin: 25px auto;
-
-    background-color: white;
+    inline-size: 5rem;
+    block-size: 3px;
+    margin: 1.25rem auto;
+    background-color: var(--tekst);
 }
 
+/* CSS Grid: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout */
 .intro figure {
-    margin: 40px 0;
-
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     align-items: center;
-
-    gap: 30px;
+    gap: var(--gap);
+    margin-block: 2rem;
 }
 
-.intro figure img {
-    width: 200px;
-    height: 280px;
-
-    flex-shrink: 0;
-
+/* object-fit + aspect-ratio: https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio */
+img {
     display: block;
-
+    inline-size: 100%;
     object-fit: cover;
+}
 
-    border: 4px solid white;
+.intro img {
+    max-inline-size: 12rem;
+    margin-inline: auto;
+    aspect-ratio: 5 / 7;
+    border: 4px solid var(--tekst);
     border-radius: 35% 35% 45% 45%;
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-.intro figcaption {
-    flex: 1;
-
-    font-size: 15px;
-    line-height: 1.6;
-
-    color: white;
-}
-.interesses {
-    margin-top: 40px;
-}
-
-.interesses h2 {
-    margin: 0 0 25px;
-
-    text-align: center;
-
-    font-size: 24px;
-
-    color: white;
-}
-
+/* auto-fit + minmax: https://developer.mozilla.org/en-US/docs/Web/CSS/repeat */
 .foto-container {
-    display: flex;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--gap);
 }
 
 .interesse {
-    flex: 1;
-
-    padding-bottom: 20px;
-
-    background-color: #1e293b;
-
-    border: 1px solid #475569;
-    border-radius: 16px;
-
-    box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.foto {
-    width: 100%;
-    height: 180px;
-
+    padding-block-end: 1.25rem;
     overflow: hidden;
+    background-color: var(--interesse);
+    border-radius: var(--radius);
 }
 
 .foto img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
+    aspect-ratio: 16 / 9;
 }
 
-.interesse h3 {
-    margin: 20px 15px 10px;
-
-    text-align: center;
-
-    font-size: 20px;
-
-    color: white;
-}
-
+.interesse h3,
 .interesse p {
-    margin: 0;
-    padding: 0 20px;
-
-    text-align: center;
-
-    font-size: 14px;
-    line-height: 1.6;
-
-    color: white;
+    padding-inline: 1rem;
 }
-
 
 .afsluiting {
-    margin-top: 35px;
-    padding-top: 25px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-
-    text-align: center;
-
-    color: white;
-
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-@media (max-width: 600px) {
-
-    body {
-        padding: 20px 10px;
-    }
-
-    .kaart {
-        width: 95%;
-        padding: 25px 15px;
-    }
-
-    h1 {
-        font-size: 30px;
-    }
-
-    .functie {
-        font-size: 16px;
-    }
-
-    .intro figure {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro figure img {
-        width: 160px;
-        height: 160px;
-    }
-
-    .foto-container {
-        flex-direction: column;
-    }
-
-    .interesse {
-        width: 100%;
-    }
-
-    .foto {
-        height: 180px;
-    }
-
-    .interesse h3 {
-        font-size: 18px;
-    }
-
-    .interesse p {
-        font-size: 14px;
-    }
-
-    .afsluiting {
-        font-size: 13px;
-    }
+    margin-block-start: 2rem;
+    padding-block-start: 1.25rem;
+    border-block-start: 1px solid var(--lijn);
 }
